@@ -1,0 +1,366 @@
+.page {
+  min-height: 100vh;
+  position: relative;
+  background: var(--bg);
+}
+
+.gridBg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(245, 158, 11, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* TOPBAR */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: rgba(8, 8, 16, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(20px);
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: var(--text-2);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--text);
+}
+
+.topLogo {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.025em;
+}
+
+.printBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  background: var(--gold);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: all 0.15s;
+}
+
+.printBtn:hover {
+  background: var(--gold-light);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+}
+
+/* SAVINGS BANNER */
+.savingsBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 32px;
+  background: rgba(16, 185, 129, 0.07);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.14);
+  font-size: 0.85rem;
+  color: #6ee7b7;
+  position: relative;
+  z-index: 1;
+  line-height: 1.5;
+}
+
+.savingsEmoji { font-size: 1rem; }
+
+.savingsAmt {
+  color: var(--green);
+  font-weight: 800;
+}
+
+/* MAIN */
+.main {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* INVOICE CARD — white, print-friendly */
+.invoiceCard {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 40px 90px rgba(0, 0, 0, 0.55);
+  color: #0f172a;
+}
+
+/* Invoice Header */
+.invoiceHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 40px 48px 32px;
+  gap: 24px;
+}
+
+.companyBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.companyLogo {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.companyName {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 5px;
+}
+
+.companyMeta {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.missingInfo {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.missingInfoHint {
+  font-size: 0.72rem;
+  color: #f59e0b;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.invoiceIdBlock { text-align: right; }
+
+.invoiceWordmark {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.invoiceNum {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0 48px;
+}
+
+/* Meta Row */
+.metaRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 24px 48px;
+}
+
+.metaKey {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+}
+
+.metaVal {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.issuedBadge {
+  display: inline-flex;
+  padding: 3px 11px;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 100px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* Bill To */
+.billTo {
+  padding: 24px 48px;
+}
+
+.billLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.billName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 9px 48px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.td {
+  padding: 20px 48px;
+  font-size: 0.87rem;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.itemName {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  font-size: 0.92rem;
+}
+
+.itemNote {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Totals */
+.totals {
+  padding: 20px 48px 28px;
+  max-width: 360px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.totalLine {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.87rem;
+  color: #475569;
+}
+
+.grandLine {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #0f172a;
+  padding-top: 10px;
+  letter-spacing: -0.02em;
+}
+
+.savedLine {
+  font-size: 0.8rem;
+  color: #059669;
+  font-weight: 600;
+}
+
+/* Invoice Footer */
+.invoiceFooter {
+  padding: 20px 48px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.invoiceFooter span:first-child {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.footerPowered {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .invoiceHeader,
+  .th, .td, .billTo, .totals, .invoiceFooter { padding-left: 24px; padding-right: 24px; }
+  .divider { margin: 0 24px; }
+  .metaRow { grid-template-columns: 1fr; padding: 18px 24px; gap: 14px; }
+  .topbar { padding: 14px 16px; }
+  .savingsBanner { padding: 12px 16px; }
+  .invoiceHeader { flex-direction: column; }
+  .invoiceIdBlock { text-align: left; }
+  .invoiceFooter { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
+
+@media print {
+  .topbar,
+  .savingsBanner { display: none !important; }
+  .page { background: white; }
+  .gridBg { display: none; }
+  .main { padding: 0; max-width: 100%; }
+  .invoiceCard {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
